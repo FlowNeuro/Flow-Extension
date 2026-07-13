@@ -4,6 +4,7 @@ export const STYLES = `
 * { box-sizing: border-box; font-family: "Roboto", system-ui, -apple-system, sans-serif; }
 
 .flow-row { display: inline-flex; gap: 8px; align-items: center; }
+.flow-watchbar { display: flex; gap: 8px; align-items: center; padding: 12px 0; }
 
 .flow-btn {
   display: inline-flex; align-items: center; gap: 6px;

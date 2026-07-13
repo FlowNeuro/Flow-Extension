@@ -1,6 +1,6 @@
 import { STYLES } from "./styles.js";
 
-const FLOATING_HOST_ID = "flow-ext-floating";
+export const FLOATING_HOST_ID = "flow-ext-floating";
 
 function styleElement() {
   const style = document.createElement("style");
@@ -25,10 +25,10 @@ export function floatingRoot() {
 }
 
 // A fresh isolated host to embed inline into a specific place in the page.
-export function createInlineHost(id) {
+export function createInlineHost(id, hostCss = "all: initial; display: inline-flex;") {
   const host = document.createElement("div");
   host.id = id;
-  host.style.cssText = "all: initial; display: inline-flex;";
+  host.style.cssText = hostCss;
   const root = host.attachShadow({ mode: "open" });
   root.appendChild(styleElement());
   return { host, root };

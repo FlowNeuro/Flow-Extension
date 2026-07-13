@@ -4,6 +4,13 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [1.0.1]
+
+### Fixed
+
+- Watch-page buttons now render as a full-width bar directly below the player and above the metadata, instead of crowding and wrapping the like/share actions row.
+- Thumbnail hover overlay no longer flickers: mouseover events that retarget to the overlay's own Shadow-DOM host are handled, and hiding is debounced.
+
 ## [1.0.0]
 
 ### Added

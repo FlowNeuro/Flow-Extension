@@ -1,27 +1,33 @@
-import { WATCH_ROW_ANCHORS } from "../extract/selectors.js";
+import { WATCH_METADATA_SELECTOR, WATCH_ROW_CONTAINERS } from "../extract/selectors.js";
 import { createInlineHost } from "./shadow-host.js";
 import { createButton } from "./button.js";
 import { playIcon, downloadIcon } from "./icons.js";
 
 const HOST_ID = "flow-ext-watch-row";
+const HOST_CSS = "all: initial; display: block; width: 100%;";
 
-function findAnchor() {
-  for (const selector of WATCH_ROW_ANCHORS) {
-    const el = document.querySelector(selector);
-    if (el) return el;
+function place(host) {
+  const metadata = document.querySelector(WATCH_METADATA_SELECTOR);
+  if (metadata?.parentElement) {
+    metadata.parentElement.insertBefore(host, metadata);
+    return true;
   }
-  return null;
+  for (const selector of WATCH_ROW_CONTAINERS) {
+    const container = document.querySelector(selector);
+    if (container) {
+      container.prepend(host);
+      return true;
+    }
+  }
+  return false;
 }
 
 export function injectWatchRow({ onWatch, onDownload }) {
   if (document.getElementById(HOST_ID)) return true;
 
-  const anchor = findAnchor();
-  if (!anchor) return false;
-
-  const { host, root } = createInlineHost(HOST_ID);
+  const { host, root } = createInlineHost(HOST_ID, HOST_CSS);
   const row = document.createElement("div");
-  row.className = "flow-row";
+  row.className = "flow-watchbar";
   row.append(
     createButton({
       icon: playIcon,
@@ -36,7 +42,8 @@ export function injectWatchRow({ onWatch, onDownload }) {
     }),
   );
   root.appendChild(row);
-  anchor.appendChild(host);
+
+  if (!place(host)) return false;
   return true;
 }
 
