@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="head">
+      <img class="mark" src="../icons/flow-mark.svg" alt="" width="22" height="22" />
+      <span class="brand">Flow</span>
+      <span id="status" class="status status--unknown">Checking…</span>
+    </header>
+
+    <section class="toggles">
+      <label class="row">
+        <span class="row__label">Overlay on thumbnails</span>
+        <input type="checkbox" data-setting="overlayOnThumbnails" />
+      </label>
+      <label class="row">
+        <span class="row__label">Watch-page buttons</span>
+        <input type="checkbox" data-setting="watchPageRow" />
+      </label>
+      <label class="row">
+        <span class="row__label">
+          Silent mode
+          <small>No prompt when Flow is running</small>
+        </span>
+        <input type="checkbox" data-setting="silentMode" />
+      </label>
+    </section>
+
+    <footer class="foot">
+      <a id="get-flow" href="#" target="_blank" rel="noopener">Get Flow</a>
+      <button id="open-options" type="button">Settings</button>
+    </footer>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

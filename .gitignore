@@ -1,0 +1,9 @@
+node_modules/
+dist/
+release/
+icons/*.png
+icons/flow-mark.svg
+*.zip
+.DS_Store
+notes/
+.claude/

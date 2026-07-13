@@ -1,0 +1,81 @@
+name: Bug report
+description: Something in the extension isn't working
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for the report. Please fill in what you can — it speeds up a fix.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened
+      description: A clear description of the bug and what you expected instead.
+      placeholder: Clicking "Watch in Flow" on a search result does nothing…
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      value: |
+        1. Go to …
+        2. Hover / right-click …
+        3. Click …
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options:
+        - Chrome
+        - Edge
+        - Brave
+        - Opera / Vivaldi
+        - Firefox
+        - Other (note it below)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Where did it happen
+      options:
+        - Watch-page buttons
+        - Thumbnail hover overlay
+        - Right-click context menu
+        - Popup / Settings
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: ext-version
+    attributes:
+      label: Extension version
+      description: Shown on the extensions page (e.g. 1.0.0).
+    validations:
+      required: true
+
+  - type: dropdown
+    id: flow-state
+    attributes:
+      label: Flow desktop state
+      options:
+        - Installed and running
+        - Installed but not running
+        - Not installed
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: console
+    attributes:
+      label: Console output
+      description: Any errors from the page console or the extension's service worker. Optional.
+      render: text

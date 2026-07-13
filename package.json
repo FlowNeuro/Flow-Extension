@@ -1,0 +1,28 @@
+{
+  "name": "flow-extension",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Send any YouTube video to the Flow desktop app to watch or download.",
+  "homepage": "https://github.com/FlowNeuro/Flow-Extension",
+  "bugs": "https://github.com/FlowNeuro/Flow-Extension/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlowNeuro/Flow-Extension.git"
+  },
+  "author": "FlowNeuro <flow.aedev@gmail.com>",
+  "license": "GPL-3.0-only",
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "node build.mjs --dev --watch",
+    "icons": "node scripts/gen-icons.mjs",
+    "package": "node scripts/package.mjs",
+    "release": "npm run build && npm run package",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.1",
+    "prettier": "^3.4.2"
+  }
+}

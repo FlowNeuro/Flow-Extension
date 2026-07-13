@@ -1,0 +1,118 @@
+:root {
+  --bg: #0f0f11;
+  --fg: #f1f1f1;
+  --muted: #a0a0a8;
+  --line: rgba(255, 255, 255, 0.1);
+  --accent: #ff0000;
+  --ok: #58d68d;
+  --off: #ff6363;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 300px;
+  margin: 0;
+  padding: 14px;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+  font-size: 14px;
+  color: var(--fg);
+  background: var(--bg);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.status {
+  margin-left: auto;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  white-space: nowrap;
+}
+.status--ok {
+  color: var(--ok);
+  border-color: rgba(88, 214, 141, 0.4);
+}
+.status--off {
+  color: var(--off);
+  border-color: rgba(255, 99, 99, 0.4);
+}
+
+.toggles {
+  display: flex;
+  flex-direction: column;
+  padding: 6px 0;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 2px;
+  cursor: pointer;
+}
+
+.row__label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.row__label small {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+input[type="checkbox"] {
+  margin-left: auto;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.foot a,
+.foot button {
+  font: inherit;
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.foot a:hover,
+.foot button:hover {
+  color: var(--fg);
+}
+#get-flow {
+  color: var(--accent);
+  font-weight: 600;
+}

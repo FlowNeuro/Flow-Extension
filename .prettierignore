@@ -1,0 +1,6 @@
+dist/
+release/
+node_modules/
+icons/
+package-lock.json
+notes/

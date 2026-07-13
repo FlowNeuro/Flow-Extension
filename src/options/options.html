@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Flow — Settings</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main class="card">
+      <header class="head">
+        <img class="mark" src="../icons/flow-mark.svg" alt="" width="28" height="28" />
+        <div>
+          <h1>Flow for YouTube</h1>
+          <p class="sub">Send videos to the Flow desktop app to watch or download.</p>
+        </div>
+      </header>
+
+      <section class="group">
+        <h2>Surfaces</h2>
+        <label class="row">
+          <span class="row__label">
+            Thumbnail overlay
+            <small>Hover any video card for quick actions</small>
+          </span>
+          <input type="checkbox" data-setting="overlayOnThumbnails" />
+        </label>
+        <label class="row">
+          <span class="row__label">
+            Watch-page buttons
+            <small>Add a Watch/Download row under the player</small>
+          </span>
+          <input type="checkbox" data-setting="watchPageRow" />
+        </label>
+      </section>
+
+      <section class="group">
+        <h2>Handoff</h2>
+        <label class="row">
+          <span class="row__label">
+            Include timestamp
+            <small>Continue where you paused on “Watch in Flow”</small>
+          </span>
+          <input type="checkbox" data-setting="includeTimestamp" />
+        </label>
+        <label class="row">
+          <span class="row__label">
+            Route YouTube Music as music
+            <small>Open music.youtube.com links in Flow’s music player</small>
+          </span>
+          <input type="checkbox" data-setting="musicAsMusic" />
+        </label>
+      </section>
+
+      <section class="group">
+        <h2>Silent bridge</h2>
+        <label class="row">
+          <span class="row__label">
+            Silent mode
+            <small>Use the local bridge so Flow reacts without an “Open?” prompt</small>
+          </span>
+          <input type="checkbox" data-setting="silentMode" />
+        </label>
+        <div class="row">
+          <span class="row__label">
+            Local access
+            <small>Required for silent mode and status detection</small>
+          </span>
+          <button id="grant" type="button" class="btn">Grant access</button>
+        </div>
+        <div class="row">
+          <span class="row__label">
+            Bridge ports
+            <small>Advanced — must match Flow Desktop</small>
+          </span>
+          <input
+            id="ports"
+            type="text"
+            class="text"
+            inputmode="numeric"
+            spellcheck="false"
+          />
+        </div>
+      </section>
+
+      <footer class="foot">
+        <a id="repo" href="#" target="_blank" rel="noopener">Extension repo</a>
+        <a id="get-flow" href="#" target="_blank" rel="noopener">Get Flow desktop</a>
+      </footer>
+    </main>
+
+    <script src="options.js"></script>
+  </body>
+</html>

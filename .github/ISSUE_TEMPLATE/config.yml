@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Flow desktop app
+    url: https://github.com/FlowNeuro/Flow-Desktop
+    about: Issues with playback, downloads, or the flow:// handoff belong in the desktop repo.
+  - name: Questions & discussion
+    url: https://github.com/FlowNeuro/Flow-Extension/discussions
+    about: Ask a question or share an idea before opening an issue.

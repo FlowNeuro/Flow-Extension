@@ -1,0 +1,140 @@
+:root {
+  --bg: #0b0b0d;
+  --card: #141417;
+  --fg: #f1f1f1;
+  --muted: #a0a0a8;
+  --line: rgba(255, 255, 255, 0.08);
+  --accent: #ff0000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 40px 20px;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+  color: var(--fg);
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 560px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 28px;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+.head h1 {
+  margin: 0;
+  font-size: 18px;
+}
+.sub {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.group {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+.group h2 {
+  margin: 0 0 8px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0;
+}
+.row__label {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 14px;
+}
+.row__label small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+input[type="checkbox"] {
+  margin-left: auto;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.text {
+  margin-left: auto;
+  width: 160px;
+  padding: 8px 10px;
+  font: inherit;
+  font-size: 13px;
+  color: var(--fg);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.text:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.btn {
+  margin-left: auto;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+.btn:hover {
+  background: #d90000;
+}
+.btn:disabled {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--muted);
+  cursor: default;
+}
+
+.foot {
+  display: flex;
+  gap: 20px;
+  padding-top: 20px;
+}
+.foot a {
+  color: var(--muted);
+  font-size: 13px;
+  text-decoration: none;
+}
+.foot a:hover {
+  color: var(--fg);
+}
