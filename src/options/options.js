@@ -1,3 +1,4 @@
+import { api } from "../lib/browser.js";
 import { bindSettingToggles } from "../lib/bind-settings.js";
 import { loadSettings, saveSettings, DEFAULT_SETTINGS } from "../lib/settings.js";
 import { hasBridgePermission, requestBridgePermission } from "../lib/permissions.js";
@@ -5,6 +6,8 @@ import { FLOW_RELEASE_URL, EXTENSION_REPO_URL } from "../lib/const.js";
 
 const grantBtn = document.getElementById("grant");
 const portsInput = document.getElementById("ports");
+
+document.getElementById("version").textContent = `v${api.runtime.getManifest().version}`;
 
 async function refreshGrant() {
   const granted = await hasBridgePermission();

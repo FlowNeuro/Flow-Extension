@@ -7,3 +7,4 @@ icons/flow-mark.svg
 .DS_Store
 notes/
 .claude/
+release.ps1

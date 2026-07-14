@@ -6,6 +6,8 @@ import { FLOW_RELEASE_URL } from "../lib/const.js";
 
 const statusEl = document.getElementById("status");
 
+document.getElementById("version").textContent = `v${api.runtime.getManifest().version}`;
+
 function setStatus(kind, text) {
   statusEl.className = `status status--${kind}`;
   statusEl.textContent = text;

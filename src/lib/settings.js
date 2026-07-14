@@ -8,7 +8,7 @@ export const DEFAULT_SETTINGS = {
   watchPageRow: true,
   silentMode: true,
   includeTimestamp: true,
-  musicAsMusic: false,
+  musicAsMusic: true,
   ports: BRIDGE_PORTS,
 };
 

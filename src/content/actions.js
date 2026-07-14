@@ -1,8 +1,7 @@
 import { handoff } from "../bridge/index.js";
 import { toast } from "../ui/toast.js";
 import { hasBridgePermission } from "../lib/permissions.js";
-import { ACTION } from "../lib/messages.js";
-import { watchAction, watchParams, downloadParams } from "./params.js";
+import { watchAction, downloadAction, watchParams, downloadParams } from "./params.js";
 
 // getSettings is a live getter so actions always read the latest settings.
 export function createActions(getSettings) {
@@ -25,7 +24,7 @@ export function createActions(getSettings) {
     },
     download(id) {
       const settings = getSettings();
-      return run(ACTION.DOWNLOAD, downloadParams(id), settings);
+      return run(downloadAction(settings), downloadParams(id), settings);
     },
   };
 }
